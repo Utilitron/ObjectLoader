@@ -9,10 +9,10 @@
 const float TO_RADS = 3.141592654f / 180.0f; // The value of 1 degree in radians
 
 Camera::Camera() {
-	// Distance from our character
-	radius = 15.0f;
+    // Distance from our character
+    radius = 15.0f;
 
-	// Camera rotation
+    // Camera rotation
     xRot = 45.0f;
     yRot = 0.0f;
     zRot = 0.0f;
@@ -27,14 +27,14 @@ Camera::Camera() {
     ySpeed = 0.0f;
     zSpeed = 0.0f;
 
-    // How fast we move (higher values mean we move and  faster)
+    // How fast we move (higher values mean we move faster)
     velocity = 0.3f;
 
     moveForward = moveBackward = moveLeft = moveRight = false;
 }
 
 void Camera::move() {
-	calculateCameraMovement();
+    calculateCameraMovement();
     xPos += xSpeed;
     yPos += ySpeed;
     zPos += zSpeed;
@@ -82,10 +82,10 @@ void Camera::calculateCameraMovement() {
 }
 
 void Camera::checkBoundries() {
-	//if (xPos > 14.0f) xPos = 14.0f;
-	//if (xPos < -14.0f) xPos = -14.0f;
-	//if (zPos > 14.0f) zPos = 14.0f;
-	//if (zPos < -14.0f) zPos = -14.0f;
+    //if (xPos > 14.0f) xPos = 14.0f;
+    //if (xPos < -14.0f) xPos = -14.0f;
+    //if (zPos > 14.0f) zPos = 14.0f;
+    //if (zPos < -14.0f) zPos = -14.0f;
 }
 
 float Camera::toRads(const float &theAngleInDegrees) {
