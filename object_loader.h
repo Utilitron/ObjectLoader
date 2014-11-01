@@ -18,7 +18,7 @@ class ObjectLoader: public FileLoader {
         void loadObject(std::string filename);
 
     public:
-        ObjectLoader(Loadable target, std::string filename);
+        ObjectLoader(Loadable* target, std::string filename);
         ~ObjectLoader();
 
         Loadable obj;
