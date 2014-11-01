@@ -19,8 +19,8 @@
 #include "string_tokenizer.h"
 #include "texture.h"
 
-ObjectLoader::ObjectLoader(Loadable target, std::string filepath) :
-        obj(target) {
+ObjectLoader::ObjectLoader(Loadable* target, std::string filepath) :
+        obj(*target) {
     loadObject(filepath);
 }
 
