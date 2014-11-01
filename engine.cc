@@ -79,7 +79,7 @@ void Engine::render() {
         glRotatef(camera.getYrot(), 0.0f, 1.0f, 0.0f);
 
         // Set the height of the cammera to include the height of the terrain
-        //camera->setYpos(world->getYforPos(camera->getXpos(),camera->getZpos()));
+        camera.setYpos(map.getYforPos(camera.getXpos(),camera.getZpos()));
 
         // Translate the screen to the position of the camera
         glTranslated((double) -camera.getXpos(), (double) -camera.getYpos(), (double) -camera.getZpos());
