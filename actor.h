@@ -17,7 +17,7 @@
 
 class Actor: public Moveable, public Loadable {
     private:
-        ObjectLoader objectLoader;
+        ObjectLoader* objectLoader;
         Loadable model;
 
     public:
