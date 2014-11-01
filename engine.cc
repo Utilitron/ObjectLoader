@@ -148,29 +148,6 @@ void Engine::run() {
     glEnable(GL_CULL_FACE);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_MULTISAMPLE_ARB);
-
-    // Set up lighting
-    GLfloat fAmbLight[] = { 0.075f, 0.075f, 0.075f, 0.0f };
-    GLfloat fDiffLight[] = { 1.0f, 1.0f, 1.0f, 0.0f };
-    GLfloat fSpecLight[] = { 0.25f, 0.25f, 0.25f, 0.0f };
-    GLfloat lightPos[] = { -50.0f, 100.0f, 100.0f, 1.0f };
-
-    glEnable(GL_LIGHTING);
-    glEnable(GL_LIGHT0);
-    glEnable(GL_COLOR_MATERIAL);
-    glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
-    glMaterialfv(GL_FRONT, GL_SPECULAR, fDiffLight);
-    glMateriali(GL_FRONT, GL_SHININESS, 128);
-
-    glLightfv(GL_LIGHT0, GL_AMBIENT, fAmbLight);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, fDiffLight);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, fSpecLight);
-    glLightModelfv(GL_LIGHT_MODEL_AMBIENT, fAmbLight);
-    glLightModeli(GL_LIGHT_MODEL_COLOR_CONTROL, GL_SEPARATE_SPECULAR_COLOR);
-
-    // Light never changes, put it here
-    glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
-
     glLightModeli(GL_LIGHT_MODEL_COLOR_CONTROL, GL_SEPARATE_SPECULAR_COLOR);
 
     glutMainLoop();
